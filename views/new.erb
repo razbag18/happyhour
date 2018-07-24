@@ -1,0 +1,46 @@
+<h1>Post new special</h1>
+
+<%# <form> <p>Check all the languages you have proficiency in.</p> <input type="checkbox" id="HTML" value="HTML" name="HTML"><label for="HTML"> HTML</label><br> <input type="checkbox" id="CSS" value="CSS" name="CSS"><label for="CSS"> CSS</label><br> <input type="checkbox" id="JS" value="JS" name="JS"><label for="JS"> JS</label><br> <input type="checkbox" id="PHP" value="PHP" name="PHP"><label for="PHP"> PHP</label><br> <input type="checkbox" id="Ruby" value="Ruby" name="Ruby"><label for="Ruby"> Ruby</label><br> <input type="checkbox" id="INTERCAL" value="INTERCAL" name="INTERCAL"><label for="INTERCAL"> INTERCAL</label><br> </form> 
+
+Read more: https://html.com/input-type-checkbox/#ixzz5M7ellUS9 %>
+
+<form action="/happyhour/special" method="post"> 
+
+<p>Drink special is on: 
+  <input type="checkbox" name="monday"><label for="">Monday</label> 
+  <input type="checkbox" name="tuesday"><label for="">Tuesday</label> 
+  <input type="checkbox" name="wednesday"><label for="">Wednesday</label>
+  <input type="checkbox" name="thursday"><label for="">Thursday</label>  
+  <input type="checkbox" name="friday"><label for="">Friday</label> 
+  <input type="checkbox" name="saturday"><label for="">Saturday</label> 
+  <input type="checkbox" name="sunday"><label for="">Sunday</label> 
+</p>
+<p>
+  <label for ="">Venue Name:</label>
+  <%# naming inputs same as our database %>
+  <input type="text" name="venue_name">
+</p>
+<p>
+  <label for ="">Address:</label>
+  <input type="text" name="address">
+</p>
+<p>
+  <label for ="">Suburb:</label>
+  <input type="text" name="suburb">
+</p>
+<p> 
+ <label for ="">Happy Hour Time:</label>
+  <%# naming inputs same as our database %>
+  <input type="text" name="happy_hour_time">
+</p>
+<p>  
+  <label for ="">Specials:</label>
+  <input type="text" name="description" placeholder="$5 pints, $12 cocktails" required>
+</p>
+<p>
+<label for="url">Website</label>
+  <input type="url" name="url" id="url" placeholder="https://happyhour.com" pattern="http.*" size="20" required />
+</p>
+<button>Submit</button>
+
+

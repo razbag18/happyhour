@@ -1,0 +1,8 @@
+<h1>Happy Hour Melbs</h1>
+<% @specials.each do |special| %>  
+<p>
+  <a href="/special/<%= special.id %>"><%= special.venue_name %></a>
+</p>
+<% end %> 
+
+<a href="/"><button>Back</button></a>

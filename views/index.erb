@@ -1,0 +1,14 @@
+<header>
+  <h1>Happy Hour Melbs</h1>
+</header>
+
+<container class="weekdays">
+  <% @weekdays.each do |weekday| %>
+  <p>
+    <a href="/day/<%= weekday.days.downcase %>">
+    <%= weekday.days %>
+    </a>
+  </p>
+  <% end %>
+  <a href ='/happyhour/new'>Post a new happy hour</a>
+</container>
