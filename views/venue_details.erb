@@ -1,8 +1,17 @@
-<h1> <%= @specials.venue_name %> </h1> 
-<p> <%= @specials.address %></p>
-<p> <%= @specials.suburb %></p>
-<p> <%= @specials.happy_hour_time %></p>
-<p> <%= @specials.description %></p>
-<p> <a href="<%= @specials.url %>"><%= @specials.url %></a></p>
+<h1> <%= @special.venue_name %> </h1> 
+<p> <%= @special.address %></p>
+<p> <%= @special.suburb %></p>
+<p> <%= @special.happy_hour_time %></p>
+<p> <%= @special.description %></p>
+<p> <a href="<%= @special.url %>"><%= @special.url %></a></p>
+<p>
+  <a href="/">
+    <button>Home</button>
+  </a>
+</p>
+<p>
+  <a href="/special/<%= @special.id %>/edit">
+    <button>Edit</button>
+  </a>
+</p>
 
-<button onclick="goBack()">Go Back</button>
