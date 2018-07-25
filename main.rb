@@ -14,6 +14,8 @@ end
 require_relative 'db_config'
 require_relative 'models/weekday'
 require_relative 'models/special'
+require_relative 'models/user'
+require_relative 'models/comment'
 
 enable :sessions
 
@@ -34,7 +36,6 @@ helpers do
 end
 
 get '/' do
-  
     redirect '/happyhour'
 end
 
@@ -69,9 +70,6 @@ post '/happyhour/special' do
   redirect '/happyhour'
 end
 
-
-
-
 # route to get to day where user has specified
 get '/day/:day' do
   user_specified_day = params[:day]
@@ -81,12 +79,13 @@ end
 
 # route to edit a special
 get '/special/:id/edit' do
+  redirect '/login' unless logged_in? #single line if statement
+
   @specials = Special.find(params[:id])
   erb :edit
 end
 
 put '/special/:id' do
-
   special = Special.find(params[:id])
   special.monday = params[:monday]
   special.tuesday = params[:tuesday]
@@ -119,7 +118,7 @@ end
 post '/session' do
   # grab email and password
   # find the user by email
-  user = User.find_by(email: params[:email])
+  user = User.find_by(user_name: params[:user_name])
   # authenticate user with password
   if user && user.authenticate(params[:password])
     #showing who is logged in

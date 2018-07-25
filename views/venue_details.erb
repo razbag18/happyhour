@@ -9,9 +9,11 @@
     <button>Home</button>
   </a>
 </p>
+<% if logged_in? %>
 <p>
   <a href="/special/<%= @special.id %>/edit">
     <button>Edit</button>
   </a>
 </p>
+<% end %>
 

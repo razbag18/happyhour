@@ -12,3 +12,8 @@
   <% end %>
   <a href="/happyhour/new">Post a new happy hour</a>
 </container>
+<% if !logged_in? %>
+<p>
+  <a href="/login"><button>Login</button></a>
+</p>
+<% end %>
