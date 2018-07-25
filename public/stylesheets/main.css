@@ -1,10 +1,88 @@
+.venue-list {
+  font-family: 'Scada', sans-serif;
+  color: gray;
+}
+
+.venue-list :link, .venue-list :visited, .days-list h1 {
+  color: black;
+  text-decoration: none;
+}
+
+.landing-img {
+  height: 70%;
+  width: 70%;
+}
+
+.day-img {
+  height: 70%;
+  width: 70%;
+}
+
+
 .login {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end; 
 } 
+.login-form {
+  border: black solid 2px;
+}
 
+.login-register {
+  display: inline-block;
+  vertical-align: top;
+  display: inline-block;
+  vertical-align: bottom;
+  font-family: 'Scada', sans-serif;
+  padding-left: 20px;
+}
+
+.login-register :link, .login-register :visited{
+  text-decoration: none;
+  color: gray;
+}
+ 
 .logged-in, .logged-out{
   padding-right: 10px; 
   justify-content: flex-end;
+  color: gray; 
+  font-family: 'Scada', sans-serif;
 } 
+
+.warning-message{
+  border: black solid 2px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.links h1, .days-list h1{
+  font-size: 15pt;
+  font-family: 'Scada', sans-serif;
+}
+
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-family: 'Scada', sans-serif;
+  text-decoration: none;
+}
+  /* display: inline-block;
+  vertical-align: top;
+*/
+
+.links a {
+  padding-left: 45px;
+}
+
+.links :link, .links :visited {
+  text-decoration: none;
+  color: gray; 
+}
+
+
+
+
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Scada', sans-serif; */

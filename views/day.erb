@@ -1,7 +1,8 @@
 <div class ="days-list">
 <h1>Happy Hour Melbs </h1> 
+</div>
 
-
+<section class="venue-list">
   <% @specials.each do |special| %>  
   <p>
     <a href="/special/<%= special.id %>"><%= special.venue_name %></a>,
@@ -9,7 +10,8 @@
     
   </p>
   <% end %> 
+</section>
+<img class="day-img" src="/stylesheets/cheers.jpg">
 
 
 <a href="/"><button>Back</button></a>
-</div>

@@ -1,20 +1,31 @@
-<header>
-  <h1>Happy Hour Melbs</h1> 
-</header>
 
-<container class="weekdays">
-  <% @weekdays.each do |weekday| %>
-  <p>
-    <a href="/day/<%= weekday.days.downcase %>">
-    <%= weekday.days %>
-    </a>
-  </p>
+
+<nav class="links">
+<h1>Happy Hour Melbs</h1>
+    <% @weekdays.each do |weekday| %>
+    <p>
+      <a href="/day/<%= weekday.days.downcase %>">
+        <%= weekday.days %>
+      </a>
+    </p>
+    <% end %>
+  </nav>
+
+
+  <img class="landing-img" src="/stylesheets/landing_img1.jpg">
+  <section class=login-register>
+    <% if !logged_in? %>
+    <p class="login-link"><a href="/login">Login</a></p>
+    <p class="register-link"><a href="/register">Sign Up</a></p>
+    <% end %>
+    <% if logged_in? %>
+    <p class="new-post">Post a new Happy Hour Special <a href="/happyhour/new"><button>Post</button></a></p>
   <% end %>
-  <a href="/happyhour/new">Post a new happy hour</a>
-</container>
-<% if !logged_in? %>
-<p>
-  <a href="/login"><button>Login</button></a>
-</p>
-  <a href="/register"><button>Sign Up</button></a>
-<% end %>
+  </section> 
+  
+
+ 
+  
+
+
+
