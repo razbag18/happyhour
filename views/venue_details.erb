@@ -1,9 +1,49 @@
 <h1> <%= @special.venue_name %> </h1> 
+<p> Special available 
+  <% if @special.monday == true %>  
+    Monday
+    <% end %>
+  <% if @special.tuesday == true %>
+    Tuesday
+  <% end %>
+  <% if @special.wednesday == true %>
+   Wednesday
+   <% end %>
+  <% if @special.thursday == true %> 
+  Thursday
+  <% end %>
+   <% if @special.friday == true %> 
+   Friday
+  <% end %>
+   <% if @special.saturday == true %> 
+   Saturday
+  <% end %>
+   <% if @special.sunday== true %> 
+   Sunday
+  <% end %>
 <p> <%= @special.address %></p>
 <p> <%= @special.suburb %></p>
 <p> <%= @special.happy_hour_time %></p>
 <p> <%= @special.description %></p>
 <p> <a href="<%= @special.url %>"><%= @special.url %></a></p>
+</p>
+
+<% if logged_in? %>
+<form action="/comments" method="post">
+<input type= "hidden" name="special_id" value="<%= @special.id %>">
+  <label for="">Comment</label>
+  <textarea name="content"></textarea>
+  <button>Post</button>
+</form>
+<% end %>
+  <% @comments.each do |comment| %> 
+    <p>Posted by: <%= comment.user.user_name %></p>
+    <%# want to change to user name %>
+    <p> <%= comment.content %></p>
+  <% end %>
+
+<button onclick="goBack()">Back</button>
+
 <p>
   <a href="/">
     <button>Home</button>

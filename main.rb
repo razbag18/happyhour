@@ -47,6 +47,8 @@ end
 
 # route to new happy hour special form
 get '/happyhour/new' do
+  redirect '/login' unless logged_in? 
+
   erb :new 
 end
 
@@ -66,14 +68,17 @@ post '/happyhour/special' do
   special.happy_hour_time = params[:happy_hour_time]
   special.description = params[:description]
   special.url = params[:url]
+  special.user_id = current_user.id
   special.save
   redirect '/happyhour'
 end
 
+
+
 # route to get to day where user has specified
 get '/day/:day' do
   user_specified_day = params[:day]
-  @specials = Special.where(user_specified_day => true)
+  @specials = Special.where(user_specified_day => true).order(:suburb)
   erb :day
 end
 
@@ -108,7 +113,34 @@ end
 # route to list particular venues and their specials
 get '/special/:id' do
   @special = Special.find(params[:id])
+  @comments = @special.comments
+  
+
   erb :venue_details
+end
+
+post '/comments' do
+  redirect '/login' unless logged_in? #single line if statement
+
+  comment = Comment.new
+  comment.content = params[:content]
+  comment.special_id = params[:special_id]
+  comment.user_id = current_user.id
+  comment.save
+  redirect "/special/#{ params[:special_id] }"
+end
+
+get '/register' do
+  erb :register
+end
+
+post '/register' do
+  user = User.new
+  user.user_name = params[:user_name]
+  user.email = params[:email]
+  user.password = params[:password]
+  user.save
+  redirect '/login'
 end
 
 get '/login' do
@@ -134,7 +166,7 @@ end
 delete '/session' do
   # end the session
   session[:user_id] = nil    # redirect to login becuase we are doing a destructive operation. want to direct to a safe page, a get page
-  redirect '/login'
+  redirect '/'
 end
 
 

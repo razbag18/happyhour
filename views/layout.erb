@@ -7,19 +7,24 @@
     window.history.back()
   }
   </script>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
+<nav class ="login">
+<div class ="logged-in">
 <% if logged_in? %>
   Logged in as: <%= current_user.user_name %>
-
+</div>
+<div class ="logged-out">
   <%# creating ability to log out %>
-  <form action="/session" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>logout</button>
+  <form class="logged-in" action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button class="logged-out">logout</button>
   </form>
 
   <% end  %>
-
+</div>
+</nav>
   <%= yield %>
 
 </body>
