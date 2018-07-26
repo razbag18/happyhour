@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'pg'
 require 'pry'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 
 def run_sql(sql)
   conn = PG.connect(dbname: 'happyhour')
