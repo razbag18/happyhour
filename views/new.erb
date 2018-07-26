@@ -1,5 +1,7 @@
 <h1>Post new special</h1>
 
+
+
 <form action="/happyhour/special" method="post"> 
 
 <p>Drink special is on: 
@@ -19,6 +21,9 @@
 <p>
   <label for ="">Address:</label>
   <input type="text" name="address">
+  <%# <% if @special && !@special.valid? %>
+  <%# <p>Venue already exists.</p> %>
+<%# <% end %> 
 </p>
 <p>
   <label for ="">Suburb:</label>

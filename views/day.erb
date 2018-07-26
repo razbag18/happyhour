@@ -11,14 +11,20 @@
     <% end %>
   </nav>
 
-
-<section class="venue-list">
+<div class="container">
+<div class="venue-list">
   <% @specials.each do |special| %>  
     <p>
       <a href="/special/<%= special.id %>"><%= special.venue_name %></a>, <%= special.suburb %>
     </p>
      <% end %> 
-</section>
-<%# <img class="day-img" src="/stylesheets/cheers.jpg"> %>
-
+</div>
+<%# <div class="day-pic"> %>
+  <%# <% if @user_specified_day == "monday" %> 
+    <%# <img class="monday-img" src="/images/asian-beer-cafe.jpg">  %>
+  <%# <% elsif @user_specified_day == "tuesday" %>  
+    <%# <img class="tuesday-img" src="/images/beer-cheers.jpg">
+  <%end%>  
+  <%# <img class="day-img" src="/stylesheets/cheers.jpg">  %>
+<%# </div> %>
 

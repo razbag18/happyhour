@@ -69,9 +69,17 @@ post '/happyhour/special' do
   special.description = params[:description]
   special.url = params[:url]
   special.user_id = current_user.id
-  special.save
-  redirect '/happyhour'
+
+  # if @special.save
+  #   params[:venue_name] = @special.venue_name
+  #   redirect '/happyhour'
+  # else
+  #   @special.save
+  #   redirect '/happyhour'
+  # end
 end
+
+
 
 
 
@@ -118,8 +126,7 @@ end
 get '/special/:id' do
   @special = Special.find(params[:id])
   @comments = @special.comments
-  @random_img = ['cheers.jpg', 'cocktail.jpg', 'landing_img.jpg', 'fruit.jpg', 'beer-cheers.jpg', 'beer-collection.jpg'].sample
-
+  @random_img = ['cheers.jpg', 'fruit.jpg', 'beer-cheers.jpg', 'beer-collection.jpg', 'wine.jpg', 'neon.jpg', 'champagne-close.jpg', 'beers-top.jpg', 'cocktail-close.jpg'].sample
   erb :venue_details
 end
 

@@ -1,4 +1,4 @@
-<container class="container">
+<div class="container">
   <div class="div-content">
     <header class="header-buttons">
       <p>
@@ -16,7 +16,7 @@
       <% end %>
     </header>
     <h1 class="venue-name"><%= @special.venue_name %></h1> 
-    <container class="venue-details">
+    <div class="venue-details">
       <p> Special available 
         <% if @special.monday == true %>  
           Monday
@@ -62,11 +62,11 @@
           <p class="comment-content"> <%= comment.content %></p>
         </div>
       <% end %>
-    </container>
+    </div>
   </div>
   <div class="div-img">
     <img class="cheers-img" src="/images/<%= @random_img %>"> 
   </div>
-</container>
+</div>
 
 
