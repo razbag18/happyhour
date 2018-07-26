@@ -1,23 +1,23 @@
 
 <header class="header-buttons"><a href="/"><button>Back</button></a></header>
 <nav class="links">
-<h1 class="title">Happy Hour Melbs</h1>
+  <h1 class="title">Happy Hour Melbs</h1>
     <% @weekdays.each do |weekday| %>
-    <p>
-      <a href="/day/<%= weekday.days.downcase %>">
-        <%= weekday.days %>
-      </a>
-    </p>
+      <p>
+        <a href="/day/<%= weekday.days.downcase %>">
+          <%= weekday.days %>
+        </a>
+      </p>
     <% end %>
-  </nav>
+</nav>
 
-<div class="container">
+<%# <div class="container"> %>
 <div class="venue-list">
   <% @specials.each do |special| %>  
     <p>
       <a href="/special/<%= special.id %>"><%= special.venue_name %></a>, <%= special.suburb %>
     </p>
-     <% end %> 
+  <% end %> 
 </div>
 <%# <div class="day-pic"> %>
   <%# <% if @user_specified_day == "monday" %> 

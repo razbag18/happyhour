@@ -1,13 +1,32 @@
-<form action="/register" method="post"> 
 
-  <label for ="">Username:</label>
-  <input type="text" name="user_name">
-
-  <label for ="">Email:</label>
-  <input type="text" name="email">
-
-  <label for ="">Password: </label>
-  <input type="password" name="password">
-
-  <button>Register</button>
-</form>
+<nav class="links">
+  <h1 class ="title">Happy Hour Melbs</h1>
+    <% @weekdays.each do |weekday| %>
+      <p>
+        <a href="/day/<%= weekday.days.downcase %>">
+          <%= weekday.days %>
+        </a>
+      </p>
+    <% end %>
+</nav> 
+<div class ="container-index">
+  <img class="landing-img" src="/stylesheets/landing_img1.jpg">
+  <section class="login-register">
+    <form class="login-form" action="/register" method="post"> 
+      <p>
+        <label for="">Username:</label>
+        <input type="text" name="user_name">
+      </p>
+      <p>
+        <label for="">Email:</label>
+        <input class="email-input" type="text" name="email">
+      </p>
+      <p>
+        <label for="">Password: </label>
+        <input class="password-input" type="password" name="password">
+      <p>
+        <button>Register</button>
+      </p>
+    </form>
+  </section>
+</div>

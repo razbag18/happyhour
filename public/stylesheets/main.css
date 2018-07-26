@@ -1,3 +1,24 @@
+
+.background-image{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:url('/stylesheets/landing_img1.jpg');
+	background-size:cover;
+	z-index:1;
+	-webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);	
+}
+
+.email-input {
+  margin-left: 15%;
+}
+
 .venue-list {
   font-family: 'Scada', sans-serif;
   color: gray;
@@ -15,14 +36,31 @@
   width: 70%;
 }
 
-.monday-img, .tuesday-img {
+/* .monday-img, .tuesday-img {
   width: 80%;
   align-self: center;
+} */
+
+.new-special {
+  font-family: 'Scada', sans-serif;
+  border: solid gray 1px;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin-top: 10%;
+  box-shadow: 10px 10px grey;
+  background-color: white;
+  position:relative;
+  z-index:2;
 }
 
 .container {
   display: flex;
   flex-direction: row;
+  /* flex-direction: row; */
   /* flex-wrap: wrap; */
 }
 
@@ -87,14 +125,13 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   
+  
 } 
-.login-form {
-  border: black solid 2px;
-}
+/* .login-form {
+  
+} */
 
 .login-register {
-  display: inline-block;
-  vertical-align: top;
   display: inline-block;
   vertical-align: bottom;
   font-family: 'Scada', sans-serif;
@@ -142,6 +179,10 @@
   color: gray; 
 }
 
+.password-input {
+  margin-left: 1%;
+}
+
 .venue-details {
   font-size: .95em;
   font-family: 'Open Sans', sans-serif;
@@ -151,6 +192,7 @@
   font-size: 1.5em;
   font-family: 'Scada', sans-serif;
 }
+
 
 
 

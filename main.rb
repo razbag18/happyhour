@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'pg'
 require 'pry'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 
 def run_sql(sql)
   conn = PG.connect(dbname: 'happyhour')
@@ -47,7 +47,7 @@ end
 
 # route to new happy hour special form
 get '/happyhour/new' do
-  redirect '/login' unless logged_in? 
+  redirect '/' unless logged_in? 
 
   erb :new 
 end
@@ -69,19 +69,7 @@ post '/happyhour/special' do
   special.description = params[:description]
   special.url = params[:url]
   special.user_id = current_user.id
-
-  # if @special.save
-  #   params[:venue_name] = @special.venue_name
-  #   redirect '/happyhour'
-  # else
-  #   @special.save
-  #   redirect '/happyhour'
-  # end
 end
-
-
-
-
 
 # route to get to day where user has specified
 get '/day/:day' do
@@ -93,8 +81,7 @@ end
 
 # route to edit a special
 get '/special/:id/edit' do
-  redirect '/login' unless logged_in? #single line if statement
-
+  redirect '/' unless logged_in? #single line if statement
   @specials = Special.find(params[:id])
   erb :edit
 end
@@ -131,7 +118,7 @@ get '/special/:id' do
 end
 
 post '/comments' do
-  redirect '/login' unless logged_in? #single line if statement
+  redirect '/' unless logged_in? #single line if statement
 
   comment = Comment.new
   comment.content = params[:content]
@@ -142,6 +129,7 @@ post '/comments' do
 end
 
 get '/register' do
+  @weekdays = Weekday.all
   erb :register
 end
 
@@ -151,12 +139,12 @@ post '/register' do
   user.email = params[:email]
   user.password = params[:password]
   user.save
-  redirect '/login'
+  redirect '/'
 end
 
-get '/login' do
-  erb :login
-end
+# get '/login' do
+#   erb :login
+# end
 
 post '/session' do
   # grab email and password
@@ -170,7 +158,7 @@ post '/session' do
     # create new session
     # redirect to secret page
   else
-    erb :login
+    erb :index
   end
 end
 

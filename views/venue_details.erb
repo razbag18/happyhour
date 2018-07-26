@@ -45,8 +45,7 @@
       <p> <%= @special.happy_hour_time %></p>
       <p> <%= @special.description %></p>
       <p> <a href="<%= @special.url %>"><%= @special.url %></a></p>
-
-
+      
       <% if logged_in? %>
         <form action="/comments" method="post">
           <input type= "hidden" name="special_id" value="<%= @special.id %>">

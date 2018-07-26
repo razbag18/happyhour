@@ -2,7 +2,6 @@
 
 <form action ="/special/<%= @specials.id %>" method="post"> 
   <input type ="hidden" name="_method" value="put">
-
   <p>Drink special is on: 
     <input type="checkbox" name="monday" <%= 'checked' if @specials.monday %> ><label for="">Monday</label> 
     <input type="checkbox" name="tuesday" <%= 'checked' if @specials.tuesday %> ><label for="">Tuesday</label> 
@@ -26,7 +25,7 @@
     <input type="text" name="suburb" value="<%= @specials.suburb%>">
   </p>
   <p> 
-  <label for ="">Happy Hour Time:</label>
+    <label for ="">Happy Hour Time:</label>
     <%# naming inputs same as our database %>
     <input type="text" name="happy_hour_time" value="<%= @specials.happy_hour_time%>">
   </p>
@@ -35,7 +34,7 @@
     <input type="text" name="description" placeholder="$5 pints, $12 cocktails" required value="<%= @specials.description%>">
   </p>
   <p>
-  <label for="url">Website</label>
+    <label for="url">Website</label>
     <input type="url" name="url" id="url" placeholder="https://happyhour.com" pattern="http.*" size="20" required value="<%= @specials.url%>"/>
   </p>
   <button>Submit</button>

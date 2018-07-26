@@ -1,33 +1,44 @@
 
 
 <nav class="links">
-<h1 class ="title">Happy Hour Melbs</h1>
-    <% @weekdays.each do |weekday| %>
+  <h1 class ="title">Happy Hour Melbs</h1>
+  <% @weekdays.each do |weekday| %>
     <p>
       <a href="/day/<%= weekday.days.downcase %>">
         <%= weekday.days %>
       </a>
     </p>
-    <% end %>
-  </nav>
+  <% end %>
+</nav>
 
-
+<div class ="container-index">
   <img class="landing-img" src="/stylesheets/landing_img1.jpg">
-  <section class=login-register>
-    <% if !logged_in? %>
-    <p class="login-link"><a href="/login">Login</a></p>
-    <p class="register-link"><a href="/register">Sign Up</a></p>
-    <% end %>
-   
-    <p class="new-post">Post a new Happy Hour Special <a href="/happyhour/new"><button>Post</button></a></p>
-
-  </section> 
+  <% if !logged_in? %>
+    <section class="login-register">
+      <form class ="login-form" action="/session" method="post">
+        <h1 class="title">Login</h1>
+        <p>
+          <label for="">User Name</label>
+          <input type="text" name="user_name">
+        </p>
+        <p>
+          <label for="">Password</label>
+          <input type="password" name="password">
+        </p>
+        <button>Login</button>
+        <p>Don't have a login? <a href="/register">Sign Up</a></p>
+        <p>You'll need to sign up to post new specials.</p>
+      </form>  
+      <% else %>
+        <p class="login-register">Post a new Happy Hour Special<a href="/happyhour/new"><button>Post</button></a></p>
+      <% end %>
+    </section> 
+  </div>
   
 
-  <%# THINGS TO DO:
-  MULTIPLE VENUE ENTRIES CANT EXIST
-  SAVING TO DATABASE BUT NOT SHOWING ON SITE %>
+ 
 
+<%# <p class="warning-message">This is a crowd sourced page. No dickhead policy! Don't take the piss. If you        post incorrect or false information, we will know about it and you'll be banned from the site. Let's drink as      cheaply as we can, as merrily as we can!</p> %>
  
   
 
