@@ -4,13 +4,13 @@
   <input type ="hidden" name="_method" value="put">
 
   <p>Drink special is on: 
-    <input type="checkbox" name="monday" value="<%= @specials.monday%>"><label for="">Monday</label> 
-    <input type="checkbox" name="tuesday" value="<%= @specials.tuesday%>"><label for="">Tuesday</label> 
-    <input type="checkbox" name="wednesday" value="<%= @specials.wednesday%>"><label for="">Wednesday</label>
-    <input type="checkbox" name="thursday" value="<%= @specials.thursday%>"><label for="">Thursday</label>  
-    <input type="checkbox" name="friday" value="<%= @specials.friday%>"><label for="">Friday</label> 
-    <input type="checkbox" name="saturday" value="<%= @specials.saturday%>"><label for="">Saturday</label> 
-    <input type="checkbox" name="sunday" value="<%= @specials.sunday%>"><label for="">Sunday</label> 
+    <input type="checkbox" name="monday" <%= 'checked' if @specials.monday %> ><label for="">Monday</label> 
+    <input type="checkbox" name="tuesday" <%= 'checked' if @specials.tuesday %> ><label for="">Tuesday</label> 
+    <input type="checkbox" name="wednesday" <%= 'checked' if @specials.wednesday %> ><label for="">Wednesday</label>
+    <input type="checkbox" name="thursday" <%= 'checked' if @specials.thursday %> ><label for="">Thursday</label>  
+    <input type="checkbox" name="friday" <%= 'checked' if @specials.friday %> ><label for="">Friday</label> 
+    <input type="checkbox" name="saturday"<%= 'checked' if @specials.saturday %> ><label for="">Saturday</label> 
+    <input type="checkbox" name="sunday" <%= 'checked' if @specials.sunday %> ><label for="">Sunday</label> 
   </p>
   <p>
     <label for ="">Venue Name:</label>

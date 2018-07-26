@@ -77,8 +77,9 @@ end
 
 # route to get to day where user has specified
 get '/day/:day' do
-  user_specified_day = params[:day]
-  @specials = Special.where(user_specified_day => true).order(:suburb)
+  @user_specified_day = params[:day]
+  @specials = Special.where(@user_specified_day => true).order(:suburb)
+  @weekdays = Weekday.all
   erb :day
 end
 
@@ -91,7 +92,9 @@ get '/special/:id/edit' do
 end
 
 put '/special/:id' do
+  # raise params.inspect
   special = Special.find(params[:id])
+
   special.monday = params[:monday]
   special.tuesday = params[:tuesday]
   special.wednesday = params[:wednesday]
@@ -99,6 +102,7 @@ put '/special/:id' do
   special.friday = params[:friday]
   special.saturday = params[:saturday]
   special.sunday = params[:sunday]
+
   special.venue_name = params[:venue_name]
   special.address = params[:address]
   special.suburb = params[:suburb]
@@ -114,7 +118,7 @@ end
 get '/special/:id' do
   @special = Special.find(params[:id])
   @comments = @special.comments
-  
+  @random_img = ['cheers.jpg', 'cocktail.jpg', 'landing_img.jpg', 'fruit.jpg', 'beer-cheers.jpg', 'beer-collection.jpg'].sample
 
   erb :venue_details
 end

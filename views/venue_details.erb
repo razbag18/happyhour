@@ -1,59 +1,72 @@
-<h1> <%= @special.venue_name %> </h1> 
-<p> Special available 
-  <% if @special.monday == true %>  
-    Monday
-    <% end %>
-  <% if @special.tuesday == true %>
-    Tuesday
-  <% end %>
-  <% if @special.wednesday == true %>
-   Wednesday
-   <% end %>
-  <% if @special.thursday == true %> 
-  Thursday
-  <% end %>
-   <% if @special.friday == true %> 
-   Friday
-  <% end %>
-   <% if @special.saturday == true %> 
-   Saturday
-  <% end %>
-   <% if @special.sunday== true %> 
-   Sunday
-  <% end %>
-<p> <%= @special.address %></p>
-<p> <%= @special.suburb %></p>
-<p> <%= @special.happy_hour_time %></p>
-<p> <%= @special.description %></p>
-<p> <a href="<%= @special.url %>"><%= @special.url %></a></p>
-</p>
+<container class="container">
+  <div class="div-content">
+    <header class="header-buttons">
+      <p>
+        <button onclick="goBack()">Back</button>
+        <a href="/">
+          <button>Home</button>
+        </a>
+      </p>
+      <% if logged_in? %>
+        <p>
+          <a href="/special/<%= @special.id %>/edit">
+            <button>Edit</button>
+          </a>
+        </p>
+      <% end %>
+    </header>
+    <h1 class="venue-name"><%= @special.venue_name %></h1> 
+    <container class="venue-details">
+      <p> Special available 
+        <% if @special.monday == true %>  
+          Monday
+        <% end %>
+        <% if @special.tuesday == true %>
+          Tuesday
+        <% end %>
+        <% if @special.wednesday == true %>
+          Wednesday
+        <% end %>
+        <% if @special.thursday == true %> 
+          Thursday
+        <% end %>
+        <% if @special.friday == true %> 
+          Friday
+        <% end %>
+        <% if @special.saturday == true %> 
+          Saturday
+        <% end %>
+        <% if @special.sunday== true %> 
+          Sunday
+        <% end %>
+      </p>
+      <p> <%= @special.address %></p>
+      <p> <%= @special.suburb %></p>
+      <p> <%= @special.happy_hour_time %></p>
+      <p> <%= @special.description %></p>
+      <p> <a href="<%= @special.url %>"><%= @special.url %></a></p>
 
-<% if logged_in? %>
-<form action="/comments" method="post">
-<input type= "hidden" name="special_id" value="<%= @special.id %>">
-  <label for="">Comment</label>
-  <textarea name="content"></textarea>
-  <button>Post</button>
-</form>
-<% end %>
-  <% @comments.each do |comment| %> 
-    <p>Posted by: <%= comment.user.user_name %></p>
-    <%# want to change to user name %>
-    <p> <%= comment.content %></p>
-  <% end %>
 
-<button onclick="goBack()">Back</button>
+      <% if logged_in? %>
+        <form action="/comments" method="post">
+          <input type= "hidden" name="special_id" value="<%= @special.id %>">
+          <label for="">Leave a Comment</label>
+          <textarea class="comment-textarea" name="content"></textarea>
+          <button>Comment</button>
+        </form>
+      <% end %>
 
-<p>
-  <a href="/">
-    <button>Home</button>
-  </a>
-</p>
-<% if logged_in? %>
-<p>
-  <a href="/special/<%= @special.id %>/edit">
-    <button>Edit</button>
-  </a>
-</p>
-<% end %>
+      <% @comments.each do |comment| %> 
+        <div class="comments-box">
+          <p class="comment-post"><%= comment.user.user_name %>:</p>
+          <p class="comment-content"> <%= comment.content %></p>
+        </div>
+      <% end %>
+    </container>
+  </div>
+  <div class="div-img">
+    <img class="cheers-img" src="/images/<%= @random_img %>"> 
+  </div>
+</container>
+
 

@@ -1,7 +1,7 @@
 
 
 <nav class="links">
-<h1>Happy Hour Melbs</h1>
+<h1 class ="title">Happy Hour Melbs</h1>
     <% @weekdays.each do |weekday| %>
     <p>
       <a href="/day/<%= weekday.days.downcase %>">
@@ -18,11 +18,15 @@
     <p class="login-link"><a href="/login">Login</a></p>
     <p class="register-link"><a href="/register">Sign Up</a></p>
     <% end %>
-    <% if logged_in? %>
+   
     <p class="new-post">Post a new Happy Hour Special <a href="/happyhour/new"><button>Post</button></a></p>
-  <% end %>
+
   </section> 
   
+
+  <%# THINGS TO DO:
+  MULTIPLE VENUE ENTRIES CANT EXIST
+  SAVING TO DATABASE BUT NOT SHOWING ON SITE %>
 
  
   

@@ -1,17 +1,24 @@
-<div class ="days-list">
-<h1>Happy Hour Melbs </h1> 
-</div>
+
+<header class="header-buttons"><a href="/"><button>Back</button></a></header>
+<nav class="links">
+<h1 class="title">Happy Hour Melbs</h1>
+    <% @weekdays.each do |weekday| %>
+    <p>
+      <a href="/day/<%= weekday.days.downcase %>">
+        <%= weekday.days %>
+      </a>
+    </p>
+    <% end %>
+  </nav>
+
 
 <section class="venue-list">
   <% @specials.each do |special| %>  
-  <p>
-    <a href="/special/<%= special.id %>"><%= special.venue_name %></a>,
-    <%= special.suburb %>
-    
-  </p>
-  <% end %> 
+    <p>
+      <a href="/special/<%= special.id %>"><%= special.venue_name %></a>, <%= special.suburb %>
+    </p>
+     <% end %> 
 </section>
-<img class="day-img" src="/stylesheets/cheers.jpg">
+<%# <img class="day-img" src="/stylesheets/cheers.jpg"> %>
 
 
-<a href="/"><button>Back</button></a>
