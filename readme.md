@@ -5,6 +5,7 @@
 ### A crowd sourced application designed to suss out the best drinks at the cheapest prices.
 
 [Happy Hour Melbs](https://salty-retreat-68815.herokuapp.com/happyhour) 
+
 [Link to Github](https://github.com/razbag18/happyhour)
 
 This second project was my first foray into building a full-stack database backed application. This application was built in a Sinatra app and utilizes SQL to create a database table structure where I can interact with my relationally-stored data. 
