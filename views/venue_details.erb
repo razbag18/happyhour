@@ -56,7 +56,7 @@
       <% if logged_in? %>
         <form action="/comments" method="post">
           <input type= "hidden" name="special_id" value="<%= @special.id %>">
-          <label for="">Leave a Comment</label>
+          <p><label for="">Leave a Comment</label></p>
           <textarea class="comment-textarea" name="content"></textarea>
           <button>Comment</button>
         </form>
