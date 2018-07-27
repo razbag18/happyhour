@@ -69,6 +69,9 @@ post '/happyhour/special' do
   special.description = params[:description]
   special.url = params[:url]
   special.user_id = current_user.id
+  special.save
+  redirect '/happyhour'
+
 end
 
 # route to get to day where user has specified
