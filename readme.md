@@ -12,6 +12,7 @@ Written in html, Ruby and includes the smallest amount of Javascript to create a
 Technologies used were ActiveRecord, Pry and PostGres. 
 
 You can view my database table diagram [here](https://github.com/razbag18/happyhour/blob/master/public/flowchart/Screen%20Shot%202018-07-27%20at%209.49.59%20am.png)
+and my Wireframe sketch [here](https://github.com/razbag18/happyhour/blob/master/public/flowchart/Wireframe.jpg)
 
 ### What is a CRUD app? 
 In computer programming, create, read, update, and delete (as an acronym CRUD) are the four basic functions of persistent storage. They are also referred to as RESTful routes: GET, POST, PUT, PATCH, and DELETE.
