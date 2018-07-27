@@ -22,8 +22,9 @@
 .venue-list {
   font-family: 'Scada', sans-serif;
   color: gray;
-  width: 100%;
+  width: 30%;
   padding-left: 5%;
+  padding-top: 2%;
 }
 
 .venue-list :link, .venue-list :visited, .days-list h1 {
@@ -69,10 +70,9 @@
 }
 
 .div-img {
-  width: 80%;
+  width: 90%;
   align-self: center;
   padding-top: 5%;
-  padding-right: 10%;
 }
 
 .cheers-img {

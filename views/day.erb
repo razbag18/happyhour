@@ -1,30 +1,26 @@
 
-<header class="header-buttons"><a href="/"><button>Back</button></a></header>
-<nav class="links">
-  <h1 class="title">Happy Hour Melbs</h1>
-    <% @weekdays.each do |weekday| %>
-      <p>
-        <a href="/day/<%= weekday.days.downcase %>">
-          <%= weekday.days %>
-        </a>
-      </p>
-    <% end %>
-</nav>
+  <header class="header-buttons"><a href="/"><button>Back</button></a></header>
+  <nav class="links">
+    <h1 class="title">Happy Hour Melbs</h1>
+      <% @weekdays.each do |weekday| %>
+        <p>
+          <a href="/day/<%= weekday.days.downcase %>">
+            <%= weekday.days %>
+          </a>
+        </p>
+      <% end %>
+  </nav>
+  <div class="container">
 
-<%# <div class="container"> %>
-<div class="venue-list">
-  <% @specials.each do |special| %>  
-    <p>
-      <a href="/special/<%= special.id %>"><%= special.venue_name %></a>, <%= special.suburb %>
-    </p>
-  <% end %> 
+  <div class="venue-list">
+    <% @specials.each do |special| %>  
+      <p>
+        <a href="/special/<%= special.id %>"><%= special.venue_name %></a>, <%= special.suburb %>
+      </p>
+    <% end %> 
+  </div>
+  <div>
+    <img class="div-img" src="/images/street.jpg">
+  </div>  
 </div>
-<%# <div class="day-pic"> %>
-  <%# <% if @user_specified_day == "monday" %> 
-    <%# <img class="monday-img" src="/images/asian-beer-cafe.jpg">  %>
-  <%# <% elsif @user_specified_day == "tuesday" %>  
-    <%# <img class="tuesday-img" src="/images/beer-cheers.jpg">
-  <%end%>  
-  <%# <img class="day-img" src="/stylesheets/cheers.jpg">  %>
-<%# </div> %>
 
