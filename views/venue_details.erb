@@ -1,5 +1,10 @@
-<div class="container">
-  <div class="div-content">
+<%# <div class="container">
+  <div class="div-content"> %>
+    
+  <div class="backgroundImageCVR">
+  <div class="background-image"></div>
+
+    <div class="venue-special"> 
     <header class="header-buttons">
       <p>
         <button onclick="goBack()">Back</button>
@@ -15,9 +20,11 @@
         </p>
       <% end %>
     </header>
+
     <h1 class="venue-name"><%= @special.venue_name %></h1> 
     <div class="venue-details">
-      <p> Special available 
+      <p>Drinks special available:</p>
+      <p> 
         <% if @special.monday == true %>  
           Monday
         <% end %>
@@ -63,9 +70,15 @@
       <% end %>
     </div>
   </div>
-  <div class="div-img">
-    <img class="cheers-img" src="/images/<%= @random_img %>"> 
+  <%# <div class="div-img">
+    <img class="cheers-img" src="/images/<%= @random_img %>
+
+
+  <%# </div> %>
   </div>
-</div>
+
+</div>  
+  <%# </div>
+</div> %>
 
 

@@ -1,41 +1,50 @@
-<h1>edit</h1>
+<div class="backgroundImageCVR">
+  <div class="background-image"></div>
 
-<form action ="/special/<%= @specials.id %>" method="post"> 
-  <input type ="hidden" name="_method" value="put">
-  <p>Drink special is on: 
-    <input type="checkbox" name="monday" <%= 'checked' if @specials.monday %> ><label for="">Monday</label> 
-    <input type="checkbox" name="tuesday" <%= 'checked' if @specials.tuesday %> ><label for="">Tuesday</label> 
-    <input type="checkbox" name="wednesday" <%= 'checked' if @specials.wednesday %> ><label for="">Wednesday</label>
-    <input type="checkbox" name="thursday" <%= 'checked' if @specials.thursday %> ><label for="">Thursday</label>  
-    <input type="checkbox" name="friday" <%= 'checked' if @specials.friday %> ><label for="">Friday</label> 
-    <input type="checkbox" name="saturday"<%= 'checked' if @specials.saturday %> ><label for="">Saturday</label> 
-    <input type="checkbox" name="sunday" <%= 'checked' if @specials.sunday %> ><label for="">Sunday</label> 
-  </p>
-  <p>
-    <label for ="">Venue Name:</label>
-    <%# naming inputs same as our database %>
-    <input type="text" name="venue_name" value="<%= @specials.venue_name%>">
-  </p>
-  <p>
-    <label for ="">Address:</label>
-    <input type="text" name="address" value="<%= @specials.address%>">
-  </p>
-  <p>
-    <label for ="">Suburb:</label>
-    <input type="text" name="suburb" value="<%= @specials.suburb%>">
-  </p>
-  <p> 
-    <label for ="">Happy Hour Time:</label>
-    <%# naming inputs same as our database %>
-    <input type="text" name="happy_hour_time" value="<%= @specials.happy_hour_time%>">
-  </p>
-  <p>  
-    <label for ="">Specials:</label>
-    <input type="text" name="description" placeholder="$5 pints, $12 cocktails" required value="<%= @specials.description%>">
-  </p>
-  <p>
-    <label for="url">Website</label>
-    <input type="url" name="url" id="url" placeholder="https://happyhour.com" pattern="http.*" size="20" required value="<%= @specials.url%>"/>
-  </p>
-  <button>Submit</button>
-</form>
+    <div class="new-special"> 
+      <h1>Edit</h1>
+
+      <form action ="/special/<%= @specials.id %>" method="post"> 
+        <input type ="hidden" name="_method" value="put">
+        <p>Drink special is on: 
+          <input type="checkbox" name="monday" <%= 'checked' if @specials.monday %> ><label for="">Monday</label> 
+          <input type="checkbox" name="tuesday" <%= 'checked' if @specials.tuesday %> ><label for="">Tuesday</label> 
+          <input type="checkbox" name="wednesday" <%= 'checked' if @specials.wednesday %> ><label for="">Wednesday</label>
+          <input type="checkbox" name="thursday" <%= 'checked' if @specials.thursday %> ><label for="">Thursday</label>  
+          <input type="checkbox" name="friday" <%= 'checked' if @specials.friday %> ><label for="">Friday</label> 
+          <input type="checkbox" name="saturday"<%= 'checked' if @specials.saturday %> ><label for="">Saturday</label> 
+          <input type="checkbox" name="sunday" <%= 'checked' if @specials.sunday %> ><label for="">Sunday</label> 
+        </p>
+        <p>
+          <label for ="">Venue Name:</label>
+          <%# naming inputs same as our database %>
+          <input type="text" name="venue_name" value="<%= @specials.venue_name%>">
+        </p>
+        <p>
+          <label for ="">Address:</label>
+          <input type="text" name="address" value="<%= @specials.address%>">
+        </p>
+        <p>
+          <label for ="">Suburb:</label>
+          <input type="text" name="suburb" value="<%= @specials.suburb%>">
+        </p>
+        <p> 
+          <label for ="">Happy Hour Time:</label>
+          <%# naming inputs same as our database %>
+          <input type="text" name="happy_hour_time" value="<%= @specials.happy_hour_time%>">
+        </p>
+        <p>  
+          <label for ="">Specials:</label>
+          <input type="text" name="description" placeholder="$5 pints, $12 cocktails" required value="<%= @specials.description%>">
+        </p>
+        <p>
+          <label for="url">Website</label>
+          <input type="url" name="url" id="url" placeholder="https://happyhour.com" pattern="http.*" size="20" required value="<%= @specials.url%>"/>
+        </p>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>

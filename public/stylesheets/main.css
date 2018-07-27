@@ -5,7 +5,7 @@
 	right:0;
 	top:0;
 	bottom:0;
-	background:url('/stylesheets/landing_img1.jpg');
+	background:url('/images/landing_img1.jpg');
 	background-size:cover;
 	z-index:1;
 	-webkit-filter: blur(10px);
@@ -52,6 +52,22 @@
   padding-top: 1%;
   padding-bottom: 2%;
   margin-top: 10%;
+  box-shadow: 10px 10px grey;
+  background-color: white;
+  position:relative;
+  z-index:2;
+}
+
+.venue-special {
+  font-family: 'Scada', sans-serif;
+  border: solid gray 1px;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  /* margin-top: 10%; */
   box-shadow: 10px 10px grey;
   background-color: white;
   position:relative;
