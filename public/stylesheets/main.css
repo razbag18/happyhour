@@ -20,11 +20,10 @@
 }
 
 .venue-list {
+  display: inline-block;
+  vertical-align: top;
   font-family: 'Scada', sans-serif;
-  color: gray;
-  width: 30%;
-  padding-left: 5%;
-  padding-top: 2%;
+  padding-left: 20px;
 }
 
 .venue-list :link, .venue-list :visited, .days-list h1 {
@@ -36,11 +35,6 @@
   height: 70%;
   width: 70%;
 }
-
-/* .monday-img, .tuesday-img {
-  width: 80%;
-  align-self: center;
-} */
 
 .new-special {
   font-family: 'Scada', sans-serif;
@@ -67,7 +61,7 @@
   padding-left: 5%;
   padding-top: 1%;
   padding-bottom: 2%;
-  margin-top: 10%;
+  margin-top: 5%;
   box-shadow: 10px 10px grey;
   background-color: white;
   position:relative;
@@ -106,7 +100,7 @@
   width: 80%;
   margin: 1%;
   clear: both;
-  background-color:#fbc958;
+  background-color:#e0e0e0;
   padding-left: 10px;
   border-radius: 25px;
 }
@@ -129,23 +123,17 @@
   width: 10px;
 }
 
- .header-buttons {
+.header-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; 
- }
-
+}
 
 .login {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  
-  
+  justify-content: flex-start; 
 } 
-/* .login-form {
-  
-} */
 
 .login-register {
   display: inline-block;
@@ -187,7 +175,7 @@
 }
 
 .links a {
-  padding-left: 45px;
+  padding-left: 40px;
 }
 
 .links :link, .links :visited {
@@ -208,6 +196,8 @@
   font-size: 1.5em;
   font-family: 'Scada', sans-serif;
 }
+
+
 
 
 

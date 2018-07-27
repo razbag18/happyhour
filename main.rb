@@ -161,7 +161,8 @@ post '/session' do
     # create new session
     # redirect to secret page
   else
-    erb :index
+    redirect '/'
+    # erb :index
   end
 end
 
